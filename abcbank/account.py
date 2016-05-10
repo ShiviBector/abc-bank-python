@@ -33,15 +33,15 @@ class Account:
         amount = self.sumTransactions()
         if self.accountType == SAVINGS:
             if (amount <= 1000):
-                return amount * 0.001
+                return amount * (0.001/365)
             else:
-                return 1 + (amount - 1000) * 0.002
+                return 1 + (amount - 1000) * (0.002/365)
         if self.accountType == MAXI_SAVINGS:
             check_day=transactionDate-timedelta(10)
             if check_day != transactionDate :
-                return amount * 0.05
+                return amount * (0.05/365)
             else:
-                return amount * 0.001
+                return amount * (0.001/365)
         
     def sumTransactions(self, checkAllTransactions=True):
         return sum([t.amount for t in self.transactions])
