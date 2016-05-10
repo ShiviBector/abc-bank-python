@@ -35,4 +35,4 @@ def test_maxi_savings_account():
     checkingAccount = Account(MAXI_SAVINGS)
     bank.addCustomer(Customer("Bill").openAccount(checkingAccount))
     checkingAccount.deposit(3000.0)
-    assert_equals(bank.totalInterestPaid(), 170.0)
+    assert_equals(bank.totalInterestPaid(), 51.0)
